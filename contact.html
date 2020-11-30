@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/mystylecss">
+    <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="./bootstrap-4.5.0-dist/fonts/font/css/all.css"> -->
+    <link rel="stylesheet" href="
+    https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/fontawesome/fawesome/css/all.min.css">
+	<title></title>
+</head>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+		font-family:arial;
+	}
+	#total{
+		width: 20%;
+		height: 445px;	
+		border: 2px solid #ecfc99;
+		margin-left:35%;
+		margin-top: 100px;
+		border-radius: 13px;
+		border-top: none;
+
+	}
+	
+	#top{
+		width: 100%;
+		height: 10%;
+		background-color: white;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		/*border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;*/
+		padding-top: 15px;
+display: flex;
+	}
+	#cam{
+		height: 10px;
+		width: 10px;
+		margin-left:30%;
+		background-color: grey;
+		border-radius: 100%;
+		cursor: pointer;
+	}
+	#topsec{
+		width: 65px;
+		height: 10px;
+		border-radius: 3px;
+		margin-left: 15px;
+		background-color: grey;
+	}
+	
+	.fa-th{
+		font-size: 30px;
+		color: white;
+		margin-top: 330px;
+			}
+	.fa-phone{
+		font-size: 30px;
+		color: white;
+		margin-top: 330px;
+	}
+
+	.fa-wifi{
+		font-size: 10px;
+		color: white;
+		
+		
+	}
+	.fa-bell{
+		font-size: 10px;
+		color: white;
+		
+		
+	}
+	.fa-whatsapp-square{
+		font-size: 40px;
+		
+		
+		
+	}
+	.fa-unlock{
+		font-size: 10px;
+		color: white;
+		
+		
+	}
+	.fa-user-circle{
+		font-size: 30px;
+		color: white;
+		margin-top: 330px;
+	}
+#scree{
+	height: 83%;
+	width: 100%;
+	/*box-sizing: border-box;*/
+	/*padding-bottom: 200px;*/
+	background-color: #5cbcd1;
+	border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		animation-name: ope;
+		animation-duration: 2s;
+		background-image: url('maddison.jpg');
+		background-size: 100% 100%;
+
+
+}
+@keyframes ope{
+	from{
+		opacity: .2
+	}
+	to{
+		opacity: 1.0
+	}
+}
+#buttomBtn{
+	width: 100%;
+	height: 7%;
+	background-color: white;
+	cursor: pointer;
+	padding-top: 10px;
+}
+#downMid{
+	cursor: pointer;
+	width: 16px;
+	height: 15px;
+	background-color: grey;
+	margin-bottom:10px;
+	border-radius: 2px;
+}
+</style>	
+<body  bgcolor="#e59bd1">
+<!-- <h1 align="center">HELLO WORLD</h1> -->
+
+<div align="center"  id="total">
+	<!-- The Total div that contains all of them ABOVE-->
+	<div id="top">
+		<!-- THe white div on top ABOVE-->
+		<div id="cam"></div>
+		<!-- the camera  ABOVE-->
+		<div id="topsec"></div>
+		<!-- the second button on top ABOVE -->
+	</div>
+	<!-- Starting the original body (scree) DOWN -->
+	<div id="scree">
+		<!-- BEGININGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG -->
+		<!-- <i title="Menu Bar" onclick=menuBar() class="fa fa-th"></i> -->
+		<!-- ENNNNNNNNNDDDDDDDDDDDDDDDDDDDDDDDDDDDDD -->
+		</div>
+
+	<!-- The Buttons underneath the scree DOWN-->
+	<div id="buttomBtn">
+		<!-- The Middle button underneath DOWN -->
+		<div onclick="men()" align="center" id="downMid"></div>
+
+
+	</div>
+</div>
+<div style="height: 200px; width: 100px" id="demo"></div>
+</body>	
+<script type="text/javascript">
+	let money;
+	// let arrse;
+	if (localStorage.getItem('money')!==null) {
+	 money=JSON.parse(localStorage.getItem('money'))
+}
+else{
+money=10
+}
+var serev;
+	arrse=JSON.parse(localStorage.getItem ('rechargeCard'));
+	console.log(arrse)
+	// if (localStorage.getItem('credit')===null) {
+	// 	var arrs=arrse
+	// }
+	// else{
+	// 	var arrset=localStorage.getItem ('credit')
+	// 	arrse=JSON.parse(arrset)
+
+	// }
+
+
+
+	// arrse=arr;
+// console.log(arrse);
+// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaa
+
+
+	let a=0
+
+var times=new Date
+hou=times.getHours()
+minu=times.getMinutes()
+sec=times.getSeconds()
+dateno=times.getDate()
+if (minu<10) {
+	minu='0'+minu
+}
+time=hou+':'+minu
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var ojoo= days[times.getDay()];
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// alert(times.getMonth())
+var datemon= months[times.getMonth()];
+
+
+var dateyear=times.getFullYear()
+
+var datedisp=ojoo+' '+dateno+' of'+' '+ datemon+' '+ dateyear
+
+
+	var screedif=0;
+	light=()=>{
+		screedif++
+		// console.log(screedif)
+		if (screedif==60) {
+			buttomBtn.style.marginTop='1px';
+			scree.style.backgroundImage="url('gjk.jpg')"
+			scree.style.backgroundColor='black'
+			scree.style.color='white'
+			// scree.style.marginTop='20px'
+				scree.innerHTML=`<div style="width: 100%; font-size:30px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  ">${time}</div><br><br>
+				
+				<marquee style="color:yellow;">${datedisp}</marquee><br><br>
+				<div style="color:yellow;">Tap to Unlock</div>
+
+				`
+	
+		}
+		
+	}
+	setInterval(light,1000)
+	const men=()=>{
+
+		 screedif=0;
+	if (a==0) {
+		scree.style.backgroundImage="url('faith.png')";
+		scree.style.transition='.5s'
+		a++;
+		scree.innerHTML=`<div style="display: flex; transition:1s; justify-content: space-around;"><i class="fa fa-wifi"><span>1</span></i><i class="fa fa-wifi"><span>2</span></i><i class="fa fa-unlock"></i><i class="fa fa-bell"></i></div>
+		<div style="display: flex; 	cursor: pointer; margin-top:-10px; justify-content: space-around; "><i title="access social medias" class="fa fa-user-circle"></i>
+		<i title="Menu Bar" onclick=menuBar() class="fa fa-th"></i><i  onclick="ale()" title="make phone calls" class="fa fa-phone"></i></div>
+		`
+
+		ale=()=>{
+			 screedif=0;
+		scree.innerHTML=`	<div style="display: flex; transition:1s; justify-content: space-around;"><i class="fa fa-wifi"><span>1</span></i><i class="fa fa-wifi"><span>2</span></i><i class="fa fa-unlock"></i><i class="fa fa-bell"></i></div>
+		<input id="noInp"  style="width: 100%;  font-size: 30px; height: 40px;border-radius: 10px;">
+		<marquee style="color:white; font-size:20px;">To buy Recharge Card simply dial *407#</marquee>
+		<div style="display: flex; margin-top: 50px; justify-content: space-around;"><div onclick="calls()" style="height:30px; padding-top: 5px; 	cursor: pointer; width: 50px; background-color:#149458; border-radius: 5px;" onclick="cal()">Call</div><div onclick="sms()" style="height:30px; width: 100px; background-color: #149458; border-radius: 5px; cursor:pointer; padding-top: 5px; ">Text SMS</div>
+		</div>
+
+		<div style="width: 100%; transition:4s; cursor: pointer; overflow: auto; max-height: 200px; margin-top: 20px; background-color: #4fb79b;">
+			<div onclick="no('09035678973')">Tobi &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span  id="nop1">09035678973</span></div><hr>
+			<div onclick="no('08135678978')">David &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop2">08135678978</span></div><hr>
+			<div onclick="no('08038256738')">Faruk &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop3">08038256738</span></div><hr>
+			<div onclick="no('080356789738')">James &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop4">080356789738</span></div><hr>
+			<div onclick="no('0803825673')">Ada &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop5">08156565673</span></div><hr>
+			<div onclick="no('09035678973')">Joseph &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop6">09035678973</span></div><hr>
+			<div onclick="no('09035678973')">Oba &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop7">09035678973</span></div><hr>
+			<div onclick="no('0903222224')">Samad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop8">0903522224</span></div><hr>
+			<div onclick="no('09035678973')">J0shua &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp<span id="nop9">09035678973</span></div><hr>
+		</div>
+`
+	}
+	
+	}
+	else{
+	scree.style.backgroundImage="url('maddison.jpg')";
+	buttomBtn.style.marginTop='0px';
+		scree.style.transition='.5s'
+	a--;
+	scree.innerHTML=``
+
+}
+
+
+	}
+	var phoneNo;
+	 no=(params)=> {
+ screedif=0;
+		noInp.value=params;
+		phoneNo=noInp.value;
+	}
+
+	sms=()=>{
+var phonenew
+phonenew=noInp.value
+console.log(phonenew)
+		 screedif=0;
+		money=money-4;
+		scree.style.backgroundColor='white';
+		scree.innerHTML=`
+		<div style="color: white;">
+	<span>TO:${phonenew}<span>
+	<textarea style="margin-top: 200px; display:inline-flex; margin-left:0px; width: 190px; height: 70px;"></textarea>
+</div>
+<button onclick=send() style="width: 90px; height: 45px; margin-top:20px; background-color: #4aaaab; border-radius:10px;">SEND</button>
+		`
+
+	}
+	send=()=>{
+		if (money>4) {
+		 screedif=0;
+		scree.innerHTML=`
+		<div style="font-size: 30px; background-colorwhite; color: #40ffb9;">MESSAGE DELIVERED TO ${phoneNo} <br> #4.00 has been deducted from your Main Balance Your new Account Balance is #${money-4}.<br><button  style="width:100px; cursor:pointer; height:40px; border-radius:10px; background-color:#4c9d01;" onclick="callBack()">Back</button></div></div>
+		`
+		localStorage.setItem('money',money)
+	}
+	else{
+	scree.innerHTML=`<div style="width: 100%; height:400px; color:white;  font-size:20px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  ">You've Insufficient Blance for this Service. This service Cost #4. Dial *407# to recharge </div>
+		
+		
+				`
+}
+}
+
+
+	
+	menuBar=()=>{
+
+		 screedif=0;
+		scree.innerHTML=`<div style="display: flex; justify-content: space-around;"><img style="margin-top:30px;" title="browse faster on your devise" width="30%" height="60px" src="fileManager.png">
+	<img style="margin-top:30px;" title="edit and watch  videos" width="30%" height="60px"  src="playstore.jpg">
+	<img style="margin-top:30px;" title="Just for fun" width="30%" height="60px"  src="livescore.jpg">
+</div>
+<div style="display: flex; justify-content: space-around;"><img style="margin-top:30px;" title="browse faster on your devise" width="30%" height="60px" src="vacebook.png">
+	<img style="margin-top:30px;" title="edit and watch  videos" width="30%" height="60px"  src="wossop.jpg">
+	<img style="margin-top:30px;" onclick="ale()" title="Just for fun" width="30%" height="60px"  src="phonebook.png">
+</div>
+<div style="display: flex; justify-content: space-around;"><img style="margin-top:30px;" title="browse faster on your devise" width="30%" height="60px" src="chrome.jpg">
+	<img style="margin-top:30px;" onclick="vid()" title="edit and watch  videos" width="30%" height="60px"  src="latif.png">
+	<img style="margin-top:30px;" title="Just for fun" width="30%" height="60px"  src="pes.png">
+</div>
+<div style="display: flex; justify-content: space-around;"><img style="margin-top:30px;" title="browse faster on your devise" width="30%" height="60px" src="calculator.png">
+	<img style="margin-top:30px;" title="edit and watch  videos" width="30%" height="60px"  src="latif.png">
+	<img style="margin-top:30px;"  width="30%" height="60px"  src="bible.png">
+</div>
+`
+	}
+	
+	vid=()=>{
+		 screedif=0;
+		scree.innerHTML=`<div style="width: 100%; max-height: 100%;">
+	<div style="display:flex; ">
+<div style="width: 100%; height: 50px; background-color: #edc90f; font-size:20px; margin-top: 40px;"><img style="width:25px; border-radius:100%; height:20px;" src="latif.png">
+<span id="filmCon">HERCULES</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <a onclick="film('projectFilm/hercules')" ><span style="font-size:30px;cursor:pointer; ">watch</span></a></div></div>
+
+<div style="width: 100%; height: 50px; background-color: #edc90f; font-size:20px; margin-top: 40px;"><img style="width:25px; border-radius:100%; height:20px;" src="latif.png">
+<span id="filmCon">WWE</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <a onclick="film('projectFilm/wwe1')" ><span style="font-size:30px;cursor:pointer; ">watch</span></a></div></div>
+
+
+<div style="width: 100%; height: 50px; background-color: #edc90f; font-size:20px; margin-top: 40px;"><img style="width:25px; border-radius:100%; height:20px;" src="latif.png">
+<span id="filmCon">WWE</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <a onclick="film('projectFilm/wwe2')" ><span style="font-size:30px;cursor:pointer; ">watch</span></a></div></div><br><br>
+<div style="height: 50px; width: 100%;"><input id="chooseFilm" type="file" name=""><button onclick="sel()">select</button></div>
+
+
+</div>`
+	}
+	var ab;
+	var ac;
+	var ad;
+
+	 film=(params)=>{
+ screedif=-5000;
+		scree.innerHTML=`
+		<div style="width:100%; max-height:200px;">
+		<video id="vid1" style="width:100%; height:200px;"  autoplay=""; src="${params}.mp4" ></video>
+		</div>
+		<div align="center"><button id="ppBtn" onclick="paue()" style="width: 90px; margin-top:100px; height: 50px; font-size:20px; background-color:#d90b28;">Pause</button></div>`
+	}
+sel=()=>{
+	if (money>=40) {
+	 screedif=-5000;
+		money=money-20;
+		localStorage.setItem('money',money)
+	ad=chooseFilm.value.length;
+	console.log(chooseFilm.value);
+	ab=chooseFilm.value.lastIndexOf('\\');
+	ac='projectFilm/'+chooseFilm.value.slice(ab+1,ad+1);
+
+	console.log(ac)
+	console.log(ab)
+scree.innerHTML=`
+		<div style="width:100%; max-height:200px;">
+		<video id="vid1" style="width:100%; height:200px;"  autoplay=""; src="${ac}" ></video>
+		</div>
+		<div align="center"><button id="ppBtn" onclick="paue()" style="width: 90px; margin-top:100px; height: 50px; font-size:20px; background-color:#d90b28;">Pause</button></div>`
+}
+else{
+	scree.innerHTML=`<div style="width: 100%; height:400px; color:white;  font-size:20px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  ">You've Insufficient Blance for this Service. This service Cost #40. Dial *407# to recharge </div>
+		
+		
+				`
+}
+}
+	let vidData=0;
+	paue=()=>{
+		 screedif=0;
+		if (vidData==0) {
+		vid1.pause();
+ppBtn.innerHTML='Play'
+		vidData=1;
+	}
+	
+	else{
+		vid1.play();
+ppBtn.innerHTML='Pause'
+		vidData=0;
+		vid1.height='200px'
+	}
+	}
+	calls=()=>{
+		 screedif=0;
+		if (noInp.value=='*123#') {
+			console.log(noInp.value)
+				console.log(noInp.value.slice(0,5))
+			buttomBtn.style.marginTop='-30px';
+
+					scree.innerHTML=`<div style="width: 100%; font-size:20px; transition:all 2s; margin-top:30px; height: 50%; background-color: white;"><div>Your Main Balance is #${Math.round(money)}<br> Bonus:0.00k</div></div>`
+		}
+		 if (noInp.value.length==11 || (noInp.value.slice(0,4)=='+234' && noInp.value.length==14))  {
+
+						
+
+		scree.innerHTML=`<div style="width: 100%; height:400px; color:white;  font-size:30px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  "><span id="hour">00</span>:<span id='minute'>00</span>:<span id='secon'>00</span>
+		<br>
+		<button style="cursor:pointer;" onclick="yello()">End Call</button></div>
+				`
+
+				timeCha=()=>{
+
+serev=secon.innerHTML;
+serev++;
+secon.innerHTML=serev;
+
+console.log(serev)
+
+				if (secon.innerHTML<10) {
+				secon.innerHTML= '0'+secon.innerHTML;
+			}
+			
+			if (secon.innerHTML>59) {
+				secon.innerHTML=0;
+				minute.innerHTML++;
+			
+			if (minute.innerHTML<10) {
+				minute.innerHTML='0'+minute.innerHTML;
+			}
+			if (minute.innerHTML>59) {
+				minute.innerHTML=0;
+				hour.innerHTML++;
+			}
+			
+
+			if (hour.innerHTML>23) {
+				hour.innerHTML=0;
+			}
+screedif=-5000
+						}
+						// ACCOUNT BALANCE DEDUCTION
+						money=money-1;
+						localStorage.setItem('money',money)
+						if (money<=0) {
+							yello();
+							scree.innerHTML=`<div style="width: 100%; height:400px; color:white;  font-size:30px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  ">You've Insufficient Balance for this Call.  Dial *407# to rechargel</div>
+											`}
+
+}
+timing=setInterval(timeCha,1000)
+
+	// scree.innerHTML=`<div style="width: 100%; height:300px; font-size:30px; cursor:pointer; background-color:white; color:black; box-sizing:border-box; padding-top:100px;  ">
+	// 	Hello world</div>
+				// `
+
+		
+
+
+	
+		}
+	
+		
+
+else if (noInp.value=='1'){
+	scree.style.transition='.5s'
+	buttomBtn.style.marginTop='-20px';
+scree.innerHTML=`<div style="width: 100%; cursor:pointer; background-color:white; height: 200px; margin-top: 20px;">
+	<div onclick="card('100')" style="width: 100%; background-color: #56b1f0; height:50px; padding-top:10px; ">
+		<span style="font-size: 20px; float:left;">#100 plan</span>
+		<button  style="width: 100px;cursor:pointer; float:right; background-color: #58bbc9; font-size:20px; height:30px; ">select</button></div>
+
+
+		<div onclick="card('200')" style="width: 100%; background-color: #56b1f0; height:50px; padding-top:10px; ">
+		<span style="font-size: 20px; float:left;">#200 plan</span>
+		<button  style="width: 100px;cursor:pointer; float:right; background-color: #58bbc9; font-size:20px; height:30px; ">select</button></div>
+
+
+<div onclick="card('500')" style="width: 100%; background-color: #56b1f0; height:50px; padding-top:10px; ">
+		<span style="font-size: 20px; float:left;">#500 plan</span>
+		<button  style="width: 100px;cursor:pointer; float:right; background-color: #58bbc9; font-size:20px; height:30px; ">select</button></div>
+
+
+
+<div onclick="card('1000')" style="width: 100%; background-color: #56b1f0; height:50px; padding-top:10px; ">
+		<span style="font-size: 20px; float:left;">#1000 plan</span>
+		<button  style="width: 100px;cursor:pointer; float:right; background-color: #58bbc9; font-size:20px; height:30px; ">select</button></div>
+
+</div>`
+}
+
+else{
+	scree.innerHTML=`<div style="width: 100%; height:400px; color:white;  font-size:30px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  ">INVALID INPUT</div>
+											`
+}
+	}
+	card=(params)=>{
+		 screedif=0;
+		buttomBtn.style.marginTop='-20px';
+
+		scree.innerHTML=`<div style="width: 100%; cursor:pointer; background-color:white; height: 200px; margin-top: 20px;">
+	<div style="font-size: 20px;">How Many #${params} card Do you Want</div><br><br>
+	<input id="noCard" style="font-size: 20px; width: 70%;" type="number" name=""><br><br>
+<button onclick="genCard(1e16,1e17)" style="width:100px; cursor:pointer; height:50px; border-radius:10px; background-color:#4c9d01;">SEND</button>
+
+</div>`
+
+genCard=(min,max)=>{
+	 screedif=0;
+	 if (params*noCard.value>2000){
+	 	buttomBtn.style.marginTop='-10px'
+	 	scree.innerHTML=`<div style="width: 100%; height:200px; color:white;  font-size:20px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:20px;  ">You can't recharge an amount greater than #2000 once</div>
+											`
+	 } 
+	if (params*noCard.value<=2000) {
+
+		let a=noCard.value;
+		let b=[];
+
+buttomBtn.style.marginTop='-10px'
+for (var i=0; i<a; i++) {
+	b.push(arrse[i]+`<hr>`)
+	scree.innerHTML=`<div style="width: 100%; color:black; cursor:pointer; background-color:white; height: 200px; margin-top: 10px;"><input id="checkIn" style="height: 30px;" type="number"><br><br><button onclick="creLoad()">LOAD</button><br><div style=" max-height:150px; overflow-x: auto;">${b}</div></div>`
+		 
+}
+ creLoad=()=>{
+ 	 screedif=0;
+ 	buttomBtn.style.marginTop='0px';
+ 	var score=Number(checkIn.value);
+	var bc=arrse.indexOf(score);
+	console.log(bc)
+	arrse.splice(bc,1);
+	let arrs=arrse;
+	localStorage.setItem('credit',JSON.stringify(arrs))
+
+
+	// var cda=localStorage.setItem('rechargecard',JSON.stringify(arrse));
+
+	if (bc!==-1) {
+		
+		scree.innerHTML=`<br>
+		<div style="width: 100%; cursor:pointer; background-color:white; height: 230px;"><input id="checkIn" style="height: 30px; width:100%;" type="number"><br><br><button onclick="creLoad()">LOAD</button><br><div style=" max-height:150px; overflow-x: auto;">${b}</div></div>
+		<br>
+		<div style="width: 100%; cursor:pointer; background-color:white; height: 100px;">You've Succesfully recharge #${params}; <br> Your new Balance is
+		#${money=money+Number(params)}.00</div>
+
+		`
+		localStorage.setItem('money',money)
+	}
+
+	else{
+
+
+		scree.innerHTML=`<div style="width: 100%; height:400px; color:white;  font-size:20px; cursor:pointer; background-color:black; box-sizing:border-box; padding-top:100px;  ">Wrong Recharge Pin<br>Check the numbers and try again later </div>
+		
+		
+				`
+	}
+
+}
+
+
+}
+}
+	}
+
+	yello=()=>{
+		
+		clearInterval(timing)
+		scree.innerHTML=`<div style="width: 100%; height:200px; color:black;  font-size:20px; cursor:pointer; background-color:white; box-sizing:border-box; padding-top:20px;">
+#${serev}.00k has been deducted from your Account.<br>
+		Your new Account Balance is #${money}.00k<br><br><button  style="width:100px; cursor:pointer; height:50px; border-radius:10px; background-color:#4c9d01;" onclick="callBack()">Back</button></div>
+											`
+		// ale()
+}
+callBack=()=>{
+	ale()
+}
+function save(){
+
+localStorage.setItem('back',JSON.stringify(creLoad))
+}
+	</script>
+	
+
+</html> 

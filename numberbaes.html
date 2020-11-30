@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>check</title>
+</head>
+<body>
+<input id="tot" value="111" type="number" name=""><sub><input id="base" type="number" value="2" name=""></sub>
+</body>
+<script type="text/javascript">
+	var a=tot.value;
+	var b=base.value;
+	var c=a.length;
+	var arr=[];
+	for (var i = 0; i<c; i++) {
+		var d=a[i]*(b**(c-i-1));
+		arr.push(d)
+
+			}
+			console.log(arr.length)
+			var len=arr.length;
+			var f=0;
+			console.log(f)
+for (var i=arr.length-1;i>=0; i--) {
+f=f+arr[i]
+}
+
+		console.log(f)
+</script>
+</html>

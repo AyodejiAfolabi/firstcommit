@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NumberBase</title>
+</head>
+<body>
+	<div style="display: none;" id="demo"></div>
+	<div style="display: none;" id="dem"></div>
+	
+	Number:<input  value="AA" id="num" name="">Base:<input id="base" type="number" name=""><br><br>
+	To Base:<input type="number" value="3" id="numB" name=""><br><br>
+	<button onclick="read()" style="width: 150px; height: 60px; border-radius: 10px; background-color: #6f91be;">CONVERT</button>
+<div id="anser" style="font-size: 30px;"></div>
+</body>
+
+
+<script type="text/javascript">
+	
+	read=()=>{
+		var a=num.value;
+	var b=base.value;
+	if (base.value=='') {
+b=10;
+		}
+	var c=a.length;
+	var arrs=[];
+	for (var i = 0; i<c; i++) {
+		var dat=a[i]
+		switch (a[i]){
+case 'A':dat=10;
+break;
+case 'B':dat=11;
+break;
+case 'C':dat=12;
+break;
+
+case 'D':dat=13;
+break;
+
+case 'E':dat=14;
+break;
+
+case 'F':dat=15;
+break;
+}
+
+
+console.log(dat)
+
+	
+
+		
+		var d=dat*(b**(c-i-1));
+		arrs.push(d)
+console.log(arrs)
+			}
+
+			var no=0;
+			
+for (var i=arrs.length-1;i>=0; i--) {
+no=no+arrs[i]
+}
+
+
+	var d=numB.value;
+	var arr=[];
+check=()=>{
+	if (no>0) {
+		var base=no%d;
+		switch (base){
+			case 10:base='A';
+			break;
+			case 11:base='B';
+					break;
+			case 12:base='C';
+					break;
+			case 13:base='D';
+					break;
+			case 14:base='E';
+					break;
+			case 15:base='F';
+					break;
+		}
+		
+		
+		no=Math.floor(no/d);
+		arr.push(base)
+		
+
+
+for (var i=arr.length; i>=0; i--) {
+	dem.innerHTML+=arr[i]
+	
+
+}
+var data=dem.innerHTML;
+
+var place=data.lastIndexOf('d');
+
+var answer=data.slice(place+1,data.length)
+for (var i =0; i<a.length; i++) {
+					if (Number(a[i])>=Number(b)) {
+					anser.innerHTML=`INVALID INPUT`
+				}
+				else if (dat>=Number(b)) {
+
+				anser.innerHTML=`INVALID INPUT`
+				}
+				else if ((dat*(b**(c-i-1)))==NaN) {
+
+				anser.innerHTML=`INVALID INPUT`
+				}
+				else{anser.innerHTML=`${a}<sub style="font-size: 15px; color:red;">${b}</sub>
+					<br> &nbsp&nbsp&nbsp&nbsp&nbsp=${answer}<sub style="font-size: 15px; color:red;">${d}</sub>`;}
+			}
+
+	}
+}
+
+check();
+setInterval(check,1)
+}
+var x=7
+console.log(x > 3 && x < 10)
+
+</script>
+</html>

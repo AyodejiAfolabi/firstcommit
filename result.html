@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#bdy{
+			background-color: #dc874b;
+		}
+		#demo{
+			width: 500px;
+			height: 500px;
+			border: 2px solid black;
+			font-size: 28px;
+		}
+		#dem{
+			line-height: 40px;
+		}
+	</style>
+	<title>Result</title>
+</head>
+<body id="bdy">
+<div id="demo" align="center">
+	<img id="imag" src="gview.png" width="200px" height="200px" style="border-radius: 100%; visibility: hidden;">
+	<div id="dem"></div>
+</div>
+</body>
+<script type="text/javascript">
+	
+var a=localStorage.getItem('data');
+var b=JSON.parse(a);
+
+var d=localStorage.getItem('scores');
+var c=JSON.parse(d)
+// var e=c[0]+c[1]+c[2]+c[3]+c[4]+c[5]+c[6]+c[7]+c[8]+c[9];
+e=0
+for (var i = 0; i < c.length; i++) {
+	e=e+c[i]
+	console.log(i)
+}
+
+var rem;
+console.log( b[1])
+switch (b[1]){
+	case 'female': imag.src='gview.png'
+	imag.style.visibility='visible';
+	break;
+	case 'male': imag.src='male.jpg'
+	imag.style.visibility='visible';
+}
+if ((e/c.length*100)<49) {
+	 rem='FAIL'
+
+}
+else if ((e/c.length*100)>79) {
+rem='EXCELLENT'
+
+}
+else if ( ((e/c.length*100)>69) && ((e/c.length*100)<80)) {
+rem='VERY GOOD<br> Keep It Up'
+
+	
+}
+else if ( ((e/c.length*100)>59) && ((e/c.length*100)<70)) {
+rem='GOOD'
+
+	
+}
+else if ( ((e/c.length*100)>=50) && ((e/c.length*100)<59)) {
+rem='FAIR'
+	
+}
+dem.innerHTML=`
+NAME: ${b[0]} <br>
+SCORE  :  ${Math.round(e/c.length*100)}% <br>
+REMARK  :${rem}<br><br>
+ADMISSION STATUS: Pending ...
+
+`
+var jk=window.history
+jk=null
+window.history=jk
+console.log(jk)
+
+
+
+</script>
+</html>
