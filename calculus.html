@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		td {
+			border: 1px solid black;
+			text-align: center;
+			box-sizing: border-box;
+			height: 40px;
+			font-size: 20px;
+			border-collapse: collapse;
+			border-radius: 4px;
+
+		}
+		td:hover{
+			background-color: #022051
+		}
+		#kk{
+			background-color: green;
+			border-radius: 4px;
+		}
+			#w,#we,#wel,#well,#wells,#wellss{
+
+	width:80px;
+	height:40px;
+	background-color:#3cb89d;
+	font-size: 30px;
+}
+#equ{
+	font-size: 40px;
+}
+#w{
+	margin-left: -60px;
+}
+#demo{
+	float: left;
+}
+	</style>
+	<title>Calculus</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="demo"></div>
+		<table id="abc" style="border: 1px solid yellow; width: 40%; margin-left: 300px; margin-top: 0px; height: 350px; background-color: #68A9D2; ">
+	<!-- <tr >
+		<th id="jo" style="height: 80px; box-sizing: border-box;" ></th>
+		<th></th>
+		<th></th>
+
+	</tr> -->
+
+	<!-- <input id="jc" type="" value="" placeholder="0"  name="" style=" width:600px; height: 60px; margin-left: 350px; "> -->
+	<div id="dispp"><input type="" name=""  name="" id="jc"  type="" value="" placeholder="" onkeydown="keyCode(event)"  name="" style=" width:40%; font-size: 30px; height: 90px; border-radius: 10px; margin-left: 300px; background-color: #ABB1BA; overflow: visible; "></div>
+
+	<tr>
+		
+		<td id="mmm" onclick="jj(1)">1</td>
+		<td onclick="jj(2)">2</td>
+	<td onclick="jj(3)">3</td>
+	
+	</tr>
+	<tr>
+		
+		<td onclick="jj(4)">4</td>
+		<td onclick="jj(5)">5</td>
+	<td onclick="jj(6)">6</td>
+	
+	</tr>
+	<tr>
+		
+		<td onclick="jj(7)">7</td>
+		<td onclick="jj(8)">8</td>
+	<td onclick="jj(9)">9</td>
+	
+	</tr>
+	<tr>
+		
+		<td onclick="jj(0)">0</td>
+		<td onclick="jj('*')">*</td>
+	<td onclick="jj('/')">/</td>
+	
+	</tr>
+	<tr>
+		
+		<td onclick="jj('-')">-</td>
+		<td onclick="jj('+')">+</td>
+	<td onclick="ja('=')">= </td>
+	
+	</tr>
+
+
+
+<tr>
+		
+		<td onclick="jj('(')">(</td>
+		<td onclick="aa('')">AC</td>
+	<td onclick="jj(')')">) </td>
+
+	</tr>
+		<tr>
+		
+		<td onclick="jj('.')">.</td>
+
+		<td onclick="jj('e')">e</td>
+	<td onclick="jj('**')"><sup><sup>^</sup></sup></td>
+
+	</tr>
+	<tr>
+	<td id="kk" onclick="jk()">OFF</td>
+	<td id="k" onclick="jp()">DEL</td>
+	<td id="k" onclick="no()">log</td>
+
+</tr>
+<tr>
+	<td onclick="sinFunc('sin')">sin</td>
+	<td onclick="cosFunc('cos')">cos</td>
+	<td onclick="tanFunc('tan')">tan</td>
+
+</tr>
+<tr>
+	<td onclick="asin('asin')">asin</td>
+	<td onclick="acos('acos')">acos</td>
+	<td onclick="atan('atan')">atan</td>
+</tr>
+<tr>
+	<td onclick="ln('ln')">ln</td>
+	<td onclick ="alog('alog')">alog</td>
+	<td onclick="square()"><sup><sup>2</sup></sup></td></td>
+</tr>
+<tr>
+	<td onclick="cube()"><sup><sup>3</sup></sup></td></td>
+	<td onclick="sqroot()"><sup><sup>1/2</sup></sup></td></td>
+	<td onclick="cbroot()"><sup><sup>1/3</sup></sup></td></td>
+
+</tr>
+<tr>
+	<td onclick="ssd()"><sup><sup>1/x</sup></sup></td>
+	<td onclick="ses()"><sup><sup>Solve Simul</sup></sup></td>
+	<td onclick="recall()">ANS</td>
+</tr>
+	<tr>
+		<td onclick="factor()">!</td>
+	</tr>
+</table>
+
+
+</body>
+
+<script type="text/javascript">
+	
+	var a=0;
+	var c= jc.value;
+
+
+function ssd(){
+
+	jc.value+='**-1'
+	// body...
+}
+	
+
+	function jj(params='') {
+
+	jc.value+=params;
+	
+	
+		// body...
+	}
+
+	
+		
+		function ja() {
+
+jc.value=eval(jc.value);
+console.log(jc.value)
+		}
+		function jp() {
+			let w= jc.value;
+			let b= w.slice(0, -1);
+			jc.value = b;
+			// body...
+		}
+
+		function aa() {
+jc.value=""
+		};
+
+		
+		function jk() {
+			a+=1
+			if (a%2==0) {
+				kk.innerHTML="OFF"
+			jc.style.opacity=1;
+			jc.value=""
+
+
+			}
+
+			
+				// body...
+			
+else if(a%2==1){
+			
+				kk.innerHTML="ON"
+				jc.style.opacity=0;
+				jc.value=''
+
+
+
+
+
+
+		// body...p
+	
+	}
+			
+}
+ 	// body...
+ 
+
+
+function cbroot() {
+	jc.value+='**(1/3)'
+	// body...
+}
+ function sqroot() {
+ 	jc.value+='**(1/2)'
+ 	// body...
+ }
+// 	// body...
+function square(){
+jc.value+='**2	'// body...
+}
+function cube() {
+	// let '^'='**'
+	jc.value+='**3'
+	// body...
+}
+// function inv() {
+// 	jc.value+=**-1
+// 	// body...
+// }
+	
+function no() {
+	jc.value='log '
+	// body...
+}
+
+
+
+function sinFunc() {
+	jc.value=('sin ')
+
+	// body...
+}
+function cosFunc() {
+	jc.value=('cos ')
+
+	// body...
+}
+function tanFunc() {
+	jc.value=("tan ")
+
+
+	// body...
+}
+function ln() {
+	jc.value='ln '
+	// body...
+}
+	function alog() {
+				jc.value='alog '
+				
+			}
+
+
+function asin() {
+	jc.value='asin '
+				// body...
+			}		
+			function acos() {
+			jc.value='acos '
+				// body...
+			}	
+				function atan() {
+					jc.value='atan '
+					// body...
+				}
+				var arr=[];
+				console.log(arr)
+			function ja() {
+
+	let hypo=jc.value.slice(0,3);
+	
+	let data=jc.value.slice(4);
+
+	let rash=jc.value.slice(0,4)
+	let ford=jc.value.slice(5)
+	let am=jc.value.slice(0,2)
+	let dj=jc.value.slice(3);
+	
+
+
+
+
+	if (hypo=='sin') {
+
+		jc.value= Math.sin(data * Math.PI/180 );
+
+	}
+
+	else if (am =='ln') {
+			jc.value=Math.log(dj);
+		}
+	
+	else if (hypo=='log') {
+
+		jc.value=Math.log10(data);
+	}
+	else if (hypo=='cos'){
+
+		jc.value=Math.cos(data * Math.PI/180);
+	}
+	else if (hypo=='tan')
+
+	{
+		jc.value=Math.tan(data * Math.PI/180);
+
+	}
+	else if (rash=='asin') {
+		jc.value= Math.asin(ford)*180/Math.PI
+		
+	}
+	else if (rash=='acos') {
+		jc.value= Math.acos(ford)*180/Math.PI
+			
+	
+	}
+	  else if (rash == 'alog') {
+	 	jc.value=Math.pow(10,ford);
+	 }
+	else if (rash=='atan') {
+		jc.value= Math.atan(ford)*180/Math.PI
+		
+	}
+ 		
+		
+	else  {
+		jc.value= eval(jc.value);
+		 keyCode(event)
+		// console.log(jc.value);
+		arr.push(jc.value)
+		localStorage.setItem('ANS',arr)
+
+console.log(arr)
+			}	
+	
+
+	
+
+		}
+		function recall() {
+			var cdc=localStorage.getItem('ANS')
+			var v=arr.length;
+			
+			jc.value+=(arr[v-1])
+			if (arr.length==0) {
+				jc.value='';
+			}
+		}
+	function keyCode(event) {
+var x= event.keyCode;
+		
+
+		if (x == 13) {
+
+
+			jc.value=eval(jc.value);
+		}
+		if (x==46) {
+			jc.value=''
+		}
+		// body...
+	}
+	// function ssd() {
+	// 	jc.value+=**-1
+	// 	// body...
+	// }
+
+	function ppp() {
+		alert(jc.value)
+		// body...
+	}
+	var dat=0;
+
+function ses () {	
+	dat++;
+	if (dat%2==1) {
+	dispp.align='center';
+	dispp.border='2px solid red'
+	dispp.innerHTML='<div id="pos">\
+	<input id="w" placeholder="X1"  type="" name="">\
+	<input id="we" placeholder="Y1" type="" name=""><span id="equ">=</span>\
+	<input id="wel" type="" name=""><button onclick="pro()">Solve</button><br>\
+	<input id="well" placeholder="X2" type="" name="">\
+<input id="wells" placeholder="Y2" type="" name=""><span id="equ">=</span>\
+<input  id="wellss" type="" name="">\
+<button onclick="disk()">Show Workings</button>\
+</div>'
+}
+else{dispp.innerHTML='<input type="" name=""  name="" id="jc"  type="" value="" placeholder="" onkeydown="keyCode(event)"  name="" style=" width:40%; font-size: 30px; height: 90px; border-radius: 10px; margin-left: -160px; background-color: #ABB1BA; overflow: visible; ">'}
+}
+
+	
+
+
+factor=()=>{
+	var answer=1;
+	var number=jc.value;
+	console.log(jc.value.length+1)
+	if (number>0) {
+
+for (var i = 1; i<=number; i++) {
+	answer=answer*i;
+}
+console.log(answer)
+jc.value=answer;
+arr.push(jc.value)
+		localStorage.setItem('ANS',arr)
+
+
+}
+if (number==0) {jc.value=1}
+
+
+
+	}
+
+
+	</script>
+</html>

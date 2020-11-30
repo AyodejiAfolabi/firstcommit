@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#demo{
+			width: 400px;
+			height: 500px;
+			border: 2px solid black;
+			font-size: 28px;
+		}
+		#dem{
+			line-height: 65px;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+<div>
+	<h1>Gender</h1>
+	<select id="gender">
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select><br>
+	<input id="nam" type="text" placeholder="name" name=""><br>
+	<button onclick="pra()">Submit</button>
+</div>
+<div id="demo" align="center">
+	<img id="imag" src="" width="200px" height="200px" style="border-radius: 100%; visibility: hidden;">
+	<div id="dem"></div>
+</div>
+</body>
+<script type="text/javascript">
+
+var M;
+// let nn=nam.value;
+	pra = () =>  {
+class Human{
+	constructor(a){
+		this.eyes=2
+		this.head=1
+		this.voice=a;
+	}
+	sayHello(){
+		console.log(this.voice)
+	}
+}
+// class Man extends Human{
+// constructor(a){
+// super(a);
+// }
+// }
+
+// class Woman extends Human{
+// constructor(a){
+// super(a)
+
+// }
+// }
+imag.style.visibility='visible'
+let nn=nam.value;
+const obj=new Man('thick');
+obj.name='Mr. '+nn
+const objs=new Woman('thin');
+objs.name='Mrs. '+nn
+// console.log(obj);
+// console.log(objs);
+const ac=gender.value;
+// console.log(ac)
+switch(ac){
+	case 'male': M=obj;
+imag.src='male.jpg'
+	imag.style.visibility='visible'
+break;
+	case 'female': M=objs;
+	imag.src='gview.png'
+	imag.style.visibility='visible'
+	break;
+	
+}
+switch (nn){
+	case '':
+
+	dem.innerHTML=``
+	alert(`Please input your Name`)
+	break
+
+console.log(M)
+
+default:
+dem.innerHTML=`
+
+Hello  ${M.name},<br>
+yov've got ${M.head} Head,<br>
+You've ${M.eyes} eyes and <br>
+You have a ${M.voice} voice.
+`	
+	}
+
+
+
+}
+
+
+
+
+// console.log(isNaN('fch'))
+</script>
+</html>

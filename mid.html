@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="alarm.js">
+	</script>
+
+	<style type="text/css">
+		
+		.total{
+			height: 500px;
+		}
+		#tes{
+			height: 70px;
+			width: 30%;
+			float: left;
+			background-color: green;
+			font-size: 66px;
+			margin-left: 10px;
+			text-align: center;
+				font-size: 66px;
+			margin-left: 20px;
+			text-align: center;
+		
+		}
+		#ter {
+			height: 70px;
+			width: 30%;
+			float: left;
+			background-color: green;
+			font-size: 20px;
+			margin-left: 20px;
+				font-size: 66px;
+			margin-left: 10px;
+			text-align: center;
+		
+		}
+		#tet{
+			height: 70px;
+			width: 30%;
+			float: left;
+			background-color: green;
+				font-size: 66px;
+			margin-left: 10px;
+			text-align: center;
+		
+		}
+		#inp{
+			background-color: red;
+			width: 30%;
+			margin-left;
+			float: left;
+			height: 70px;
+			font-size: 30px;
+			margin-left: 7px;
+		
+	
+		}
+		#inr{
+			background-color: red;
+			width:30%;
+					margin-left: 7px;
+		
+			float: left;
+			height: 70px;
+			font-size: 30px;
+		}
+		#ins{
+			background-color: red;
+			width:30%;
+					margin-left: 7px;
+		
+			font-size: 30px;
+			float: left;
+			height: 70px;
+		}
+		#myAudio{
+			display: none;
+			
+		}
+		#myBtn{
+			background-color: #3368B2;
+			height: 60px;
+			width: 80%;
+			margin-top: 50px;
+			margin-left: 50px;
+		
+		}
+		#set{
+			background-color: blue;
+			height: 60px;
+			width: 80px;
+			margin-top: 200px;
+		}
+		.total{
+			background-color: #F5932A;
+			width: 50%;
+			margin-left: 200px;
+		}
+		.ter{
+			color: #B847FF;
+			font-size: 20px;
+			margin-left: 30%;
+		}
+		#rest{
+			color: #B847FF;
+			font-size: 20px;
+			margin-left: 30%;
+			margin-top: 30px;
+		}
+		.eeg{
+			justify-content: space-between;
+		}
+	</style>
+	<title>javascript ALARM</title>
+</head>
+<body onload="startTime()">
+	<div class="total">
+		<div class="ter" style=" font-size: 30px; font-family: arial; ">Time(GMT+1)</div>
+	<div id="ter"></div>	
+	<div id="tes"></div>
+	<div id="tet"></div>
+	
+	<p style="clear: both;"></p>
+	<div id="rest" style=" font-size: 30px; font-family: arial;
+			">SET ALARM HERE</div>
+		<div class="eeg"><input id="inr" type="" placeholder="HOURS"  name="">
+<input id="ins" type="" placeholder="MINUTES"  name="">
+	<input id="inp" type="" placeholder="SECONDS"  name=""></div>
+	<p style="clear: both;"></p>
+	 <button id="snoozebutton" style="background-color: #3368b2; color: white; font-size: 24px; margin-left: 30%; margin-top: 40px; width: 200px; height: 70px;"  onclick="sno()">SNOOZE</button>
+	<!--   <button onclick="pra()" id="set">SET</button><br> -- --> 
+	<button id="myBtn" style="color: white; font-size: 24px; font-family: arial;"  onclick="aud()">RESET ALARM</button>
+	<input type="button" value="STOP ALARM" onclick="stop()">
+	<div></div>
+	<div id="res" style="display: none;">SET ALARM HERE</div>
+	<audio id="song" src="" autoplay="" loop="" style="display: none;"></audio>
+	</div>
+	<input id="fil" type="file" name="">
+	<img id="ima" src="">
+<script >
+	var f= parseInt("10.33")
+
+
+	var a= new Date();
+	var b= a.getSeconds();
+	var c = a.getMinutes();
+	var d= a.getHours();
+	
+	function startTime() {
+		// body...
+	
+	var a= new Date();
+	var b= a.getSeconds();
+	var c = a.getMinutes();
+	var d= a.getHours();
+	
+	  var t = setTimeout(startTime);
+ b= checkTime(b);
+
+	c= checkTime(c);
+	ter.innerHTML= d;
+	tes.innerHTML=c;
+	tet.innerHTML= b;
+	
+var m=fil.value;
+var n=m.lastIndexOf('\\')
+console.log(n);
+
+	// console.log(inp.value);
+
+if ( inr.value==d && ins.value==c &&inp.value==b) {
+	 		// res.innerHTML='<div><audio controls="" style="display:none" loop="" autoplay="" id="myAudio"  src="wakeup.mp3"></audio></div>'
+	 
+	 		song.src='wakeup.mp3'
+
+console.log(n)
+	 	}
+
+	
+		 }
+		function pra() {
+	if ( inr.value==d && ins.value==c &&inp.value==b) {
+			// res.innerHTML='<div><audio autoplay controls="" style="display:none" autoplay="" id="myAudio"  src="wakeup.mp3"></audio></div>'
+			song.src=''
+		}
+}
+
+
+
+ function checkTime(i) {
+    if (i < 10) {i = "0" + i};  
+    return i;
+}
+function aud() {
+	a+=1
+	inr.value=''
+	ins.value=''
+	inp.value=''
+	// res.innerHTML='<div><audio  controls="" style="display:none" id="myAudio"  src="wakeup.mp3"></audio></div>';
+	song.src=''
+if (a%2==1) {myBtn.style.opacity=.4;
+
+myBtn.innerHTML='';
+
+
+}
+	if (a%2==0) {myBtn.style.opacity=1;
+		myBtn.innerHTML='STOP ALARM'}
+	
+
+}
+
+// ins.value=parseInt(ins.value);
+function sno() {
+	
+		// res.innerHTML='<div><audio  controls="" style="display:none" id="myAudio"  src="wakeup.mp3"></audio></div>';
+	song.src=''
+		if(ins.value==''){
+			
+		}
+ins.value= eval(parseInt(ins.value)+1);
+
+if (ins.value > 59) {
+	ins.value=ins.value%60;
+	inr.value=(parseInt(inr.value)+1);
+}
+if (ins.value<10 ) {
+	ins.value= '0'+ins.value;
+
+}
+if (inr.value>23) {
+	alert('input a valid time or the time will be converted to modulus 24');
+	inr.value=inr.value%24
+}
+
+
+
+return ins.value;
+if ( inr.value==d && ins.value==c &&inp.value==b) {
+	 		// res.innerHTML='<div><audio controls="" style="display:none" autoplay="" id="myAudio"  src="wakeup.mp3"></audio></div>'
+	song.src='wakeup.mp3'
+	 	}
+}
+
+function stop() {
+	// res.innerHTML=res.innerHTML='<div><audio controls="" style="display:none" autoplay="" id="myAudio"  src="wp.mp3"></audio></div>'
+
+	song.src=''
+}
+
+</script>
+
+	</script>
+
+
+</body>
+
+
+</html>
+

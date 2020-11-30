@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	.container{
+		background-color: #1E9A89;
+		width: 60%;
+		margin-left: 10%;
+		padding-top:0px;
+		margin-top: 0px;
+font-size: 64px;
+height: 15rem;
+float: left;
+	}
+	.btn{
+
+		float: left;
+	
+		margin-left: 5%;
+
+	}
+	#test,#laps,#gf,#stp,#mm{
+		width: 10rem;
+		height:3rem;
+		border-radius: 100%;
+		font-size: 20px;
+		background-color: #820F3C;
+	}
+	#stp:hover{
+		background-color: #FFCA49;
+		transition-duration: 1s;
+	}
+	#test:hover{
+		background-color: #FFCA49;
+		transition-duration: 1s;
+	}
+	#laps:hover{
+		background-color: #FFCA49;
+		transition-duration: 1s;
+	}
+	#gf:hover{
+		background-color: #FFCA49;
+		transition-duration: 1s;
+	}
+	#mm:hover{
+		background-color: #FFCA49;
+		transition-duration: 1s;
+	}
+	#demo{
+	clear: both;
+		overflow: auto;
+		 max-height: 20rem; 
+		 border:2px solid #1E9A89;
+		 color: #071597;
+		  width: 20%;
+		  font-size: 35px;
+           background-color: #ccc;
+         border-radius: 10px;
+         margin-left: 20%;
+		   height: 20rem;
+	}
+	@media (max-width: 920px){
+		.body{
+			padding-top: 0px;
+		}
+		.container{
+			width: 100%;
+			float: none;
+			margin-top: 0px;
+			font-size: 40px;
+			margin-left: 0%;
+		}
+		#btn{
+			float: left;
+		}
+		#demo{
+			float: right;
+			margin-top: -340px;
+			margin-right: 30px;
+			font-size: 15px;
+		}
+
+		#milliseconds{
+			color: red ! important;
+			font-size: 40px !important;
+		}
+	}
+
+</style>
+	<title>JS stopWatch</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Ayodeji">
+	
+</head>
+<body style="background-color:#333333";>
+	
+	<div class="container" align="center"><h1 align="center"> <span id="hour"> 00</span>:<span id="minute">00</span>:<span id="seconds">00</span>:<small style="color: lightgrey; font-size: 60px;" id="milliseconds">00</small></h1></div>
+<div class="btn">
+ <button id="test" onclick="pra()" value="Reset">Reset</button><br><br><br>
+<button id="laps" onclick="overlap()">Laps</button><br><br><br>
+<button id="gf" onclick="sartStopwatch()">Start/continue</button><br><br><br>
+<button id="stp" onclick="stp()">Stop</button><br><br><br>
+<button id="mm" onclick="mmm()">Clear History</button>
+</div>
+
+<div id="demo"></div>
+
+</body>
+
+<script type="text/javascript">
+	// alert(4643);
+var currentTime;
+	var arr=[];
+	var timing;
+
+
+	// body...
+
+	function sartStopwatch() {
+		gf.disabled=true;
+		//ml=mls.innerhtml
+		//ml++
+		//mls.innerhtml=ml
+		ml=milliseconds.innerHTML;
+		ml++;
+		milliseconds.innerHTML=ml;
+		if (milliseconds.innerHTML<10) {
+			milliseconds.innerHTML= '0'+milliseconds.innerHTML;	
+		}
+if (milliseconds.innerHTML>99) {
+				milliseconds.innerHTML=0;
+				seconds.innerHTML++;
+				if (seconds.innerHTML<10) {
+				seconds.innerHTML= '0'+seconds.innerHTML;
+			}
+			}
+			if (seconds.innerHTML>59) {
+				seconds.innerHTML=0;
+				minute.innerHTML++;
+				if (seconds.innerHTML<10) {
+				seconds.innerHTML= '0'+seconds.innerHTML;
+			}
+			if (minute.innerHTML<10) {
+				minute.innerHTML='0'+minute.innerHTML;
+			}
+			if (minute.innerHTML>59) {
+				minute.innerHTML=0;
+				hour.innerHTML++;
+			}
+			if (minute.innerHTML<10) {
+				minute.innerHTML='0'+minute.innerHTML;
+			}
+
+			if (hour.innerHTML>23) {
+				hour.innerHTML=0;
+			}
+
+						}
+
+		timing=setTimeout(sartStopwatch,10);
+}
+function stp() {
+
+	clearTimeout(timing);
+	gf.disabled=false;
+}
+function pra() {
+
+		hour.innerHTML='00';
+		minute.innerHTML='00';
+		seconds.innerHTML='00';
+		milliseconds.innerHTML='00';
+		clearTimeout(timing);
+		gf.disabled=false;
+
+	}
+	function overlap() {
+	currentTime=hour.innerHTML+':'+minute.innerHTML+':'+seconds.innerHTML+':'+milliseconds.innerHTML;
+	demo.innerHTML+=currentTime + '<br>';
+arr.push(currentTime);
+console.log(arr);
+
+// for (var i = 0; i < arr.length; i++) {
+// 	demo.innerHTML=arr;
+// }
+	}
+	function mmm() {
+		demo.innerHTML=''
+		// body...
+	}
+
+
+</script>
+</html>

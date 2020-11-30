@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mul</title>
+	<style type="text/css">
+		table,td,tr{
+			border:1px solid black;
+			background-color: #4E376D;
+			box-sizing: border-box;
+			color: white;
+			font-size: 16px;
+		}
+		#firrow{
+display: none;
+		}
+	</style>
+</head>
+<body>
+	<table id="tab" width="80%" height="300px">
+		<th>
+			<tr></tr>
+		</th>
+		<tr id="firrow" >
+			<div id="fircol1"><td >1*1=1</td></div>
+			<td id="seccol1">2*1=2</td>
+			<td id="thicol1">3*1=3</td>
+			<td id="foucol1">4*1=4</td>
+			<td id="fifcol1">5*1=5</td>
+			<td id="sixcol1">6*1=6</td>
+			<td id="sevcol1">7*1=7</td>
+			<td id="eigcol1">8*1=8</td>
+			<td id="nincol1">9*1=9</td>
+			<td id="tencol1">10*1=10</td>
+			<td id="elecol1">11*1=11</td>
+			<td id="twecol1">12*1=12</td>
+		</tr>
+		<tr id="secrow">
+			<td id="fircol2">1*2=2</td>
+			<td id="seccol2">2*2=4</td>
+			<td id="thicol2">3*2=6</td>
+			<td id="foucol2">4*2=8</td>
+			<td id="fifcol2">5*2=10</td>
+			<td id="sixcol2">6*2=12</td>
+			<td id="sevcol2">7*2=14</td>
+			<td id="eigcol2">8*2=16</td>
+			<td id="nincol2">9*2=18</td>
+			<td id="tencol2">10*2=20</td>
+			<td id="elecol2">11*2=22</td>
+			<td id="twecol2">12*2=24</td>
+		</tr>
+		<tr id="thirow">
+			<td id="fircol3">1*3=3</td>
+			<td id="seccol3">2*3=6</td>
+			<td id="thicol3">3*3=9</td>
+			<td id="foucol3">4*3=12</td>
+			<td id="fifcol3">5*3=15</td>
+			<td id="sixcol3">6*3=18</td>
+			<td id="sevcol3">7*3=21</td>
+			<td id="eigcol3">8*3=24</td>
+			<td id="nincol3">9*3=27</td>
+			<td id="tencol3">10*3=30</td>
+			<td id="elecol3">11*3=33</td>
+			<td id="twecol3">12*3=36</td>
+		</tr>
+		<tr id="fourow">
+			<td id="fircol4">1*4=4</td>
+			<td id="seccol4">2*4=8</td>
+			<td id="thicol4">3*4=12</td>
+			<td id="foucol4">4*4=16</td>
+			<td id="fifcol4">5*4=20</td>
+			<td id="sixcol4">6*4=24</td>
+			<td id="sevcol4">7*4=28</td>
+			<td id="eigcol4">8*4=32</td>
+			<td id="nincol4">9*4=36</td>
+			<td id="tencol4">10*4=40</td>
+			<td id="elecol4">11*4=44</td>
+			<td id="twecol4">12*4=48</td>
+		</tr>
+		<tr id="fifrow">
+			<td id="fircol5">1*5=5</td>
+			<td id="seccol5">2*5=10</td>
+			<td id="thicol5">3*5=15</td>
+			<td id="foucol5">4*5=20</td>
+			<td id="fifcol5">5*5=25</td>
+			<td id="sixcol5">6*5=30</td>
+			<td id="sevcol5">7*5=36</td>
+			<td id="eigcol5">8*5=42</td>
+			<td id="nincol5">9*5=45</td>
+			<td id="tencol5">10*5=50</td>
+			<td id="elecol5">11*5=55</td>
+			<td id="twecol5">12*5=60</td>
+		</tr>
+		<tr id="sixrow">
+			<td id="fircol6">1*6=6</td>
+			<td id="seccol6">2*6=12</td>
+			<td id="thicol6">3*6=18</td>
+			<td id="foucol6">4*6=24</td>
+			<td id="fifcol6">5*6=30</td>
+			<td id="sixcol6">6*6=36</td>
+			<td id="sevcol6">7*6=42</td>
+			<td id="eigcol6">8*6=48</td>
+			<td id="nincol6">9*6=54</td>
+			<td id="tencol6">10*6=60</td>
+			<td id="elecol6">11*6=66</td>
+			<td id="twecol6">12*6=72</td>
+		</tr>
+		<tr id="sevrow">
+			<td id="fircol7">1*7=7</td>
+			<td id="seccol7">2*7=14</td>
+			<td id="thicol7">3*7=21</td>
+			<td id="foucol7">4*7=28</td>
+			<td id="fifcol7">5*7=35</td>
+			<td id="sixcol7">6*7=42</td>
+			<td id="sevcol7">7*7=49</td>
+			<td id="eigcol7">8*7=56</td>
+			<td id="nincol7">9*7=63</td>
+			<td id="tencol7">10*7=70</td>
+			<td id="elecol7">11*7=77</td>
+			<td id="twecol7">12*7=84</td>
+		</tr>
+		<tr id="eigrow">
+			<td id="fircol8">1*8=8</td>
+			<td id="seccol8">2*8=16</td>
+			<td id="thicol8">3*8=24</td>
+			<td id="foucol8">4*8=32</td>
+			<td id="fifcol8">5*8=40</td>
+			<td id="sixcol8">6*8=48</td>
+			<td id="sevcol8">7*8=56</td>
+			<td id="eigcol8">8*8=64</td>
+			<td id="nincol8">9*8=72</td>
+			<td id="tencol8">10*8=80</td>
+			<td id="elecol8">11*8=88</td>
+			<td id="twecol8">12*8=96</td>
+		</tr>
+		<tr id="ninrow">
+			<td id="fircol9">1*9=9</td>
+			<td id="seccol9">2*9=18</td>
+			<td id="thicol9">3*9=27</td>
+			<td id="foucol9">4*9=36</td>
+			<td id="fifcol9">5*9=45</td>
+			<td id="sixcol9">6*9=54</td>
+			<td id="sevcol9">7*9=63</td>
+			<td id="eigcol9">8*9=72</td>
+			<td id="nincol9">9*9=81</td>
+			<td id="tencol9">10*9=90</td>
+			<td id="elecol9">11*9=99</td>
+			<td id="twecol9">12*9=108</td>
+		</tr>
+		<tr id="tenrow">
+			<td id="fircol10">1*10=10</td>
+			<td id="seccol10">2*10=20</td>
+			<td id="thicol10">3*10=30</td>
+			<td id="foucol10">4*10=40</td>
+			<td id="fifcol10">5*10=50</td>
+			<td id="sixcol10">6*10=60</td>
+			<td id="sevcol10">7*10=70</td>
+			<td id="eigcol10">8*10=80</td>
+			<td id="nincol10">9*10=90</td>
+			<td id="tencol10">10*10=100</td>
+			<td id="elecol10">11*10=110</td>
+			<td id= "twecol10">12*10=120</td>
+		</tr>
+		<tr id="elerow">
+			<td id="fircol11">1*11=11</td>
+			<td id="seccol11">2*11=22</td>
+			<td id="thicol11">3*11=33</td>
+			<td id="foucol11">4*11=44</td>
+			<td id="fifcol11">5*11=55</td>
+			<td id="sixcol11">6*11=66</td>
+			<td id="sevcol11">7*11=77</td>
+			<td id="eigcol11">8*11=88</td>
+			<td id="nincol11">9*11=99</td>
+			<td id="tencol11">10*11=110</td>
+			<td id="elecol11">11*11=121</td>
+			<td id="twecol11">11*12=132</td>
+		</tr>
+		<tr id="twerow">
+			<td id="fircol12">1*12=12</td>
+			<td id="seccol12">2*12=24</td>
+			<td id="thicol12">3*12=36</td>
+			<td id="foucol12">4*12=48</td>
+			<td id="fifcol12">5*12=60</td>
+			<td id="sixcol12">6*12=72</td>
+			<td id="sevcol12">7*12=84</td>
+			<td id="eigcol12">8*12=96</td>
+			<td id="nincol12">9*12=108</td>
+			<td id="tencol12">10*12=120</td>
+			<td id="elecol12">11*12=132</td>
+			<td id="twecol12">12*12=144</td>
+		</tr>
+		
+
+	</table>
+	<div id="demo"></div>
+	<input id="col" style="width: 400px; height: 50px; margin-top: 50px; background-color:#2A6740;  font-size: 30px;" placeholder="column" type="" name=""><br>
+<input id="row" style="width: 400px; height: 50px; margin-top: 50px; background-color:#19678D;  font-size: 30px;" placeholder="row" type="" name="">
+<br>
+<button style=" width: 200px; border-radius: 10px; height: 50px;margin-top: 50px; background-color:#f24711;  font-size: 30px;" onclick="dis()">display</button>
+
+</body>
+
+<script type="text/javascript">
+	
+	function dis() {
+		alert(77)
+		if (col.value==1) {
+
+		firrow.style.display='block';
+
+		}
+	
+
+	}
+	for (var i = 0; i < 13; i++) {
+		demo.innerHTML+=i+'<br>';
+		 console.log(i*'3' + '=')
+	}
+
+
+</script>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="alarm.js">
+	</script>
+
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		.ter{
+			color: #d50f46;
+		}
+		body{
+			background-color: #4c91f2;
+		}
+		.total{
+			width: 40%;
+			margin-left: 20%;
+			border-radius: 10px;
+			height: 600px;
+			border:1px solid yellow ;
+
+		}
+		#ter,#tes,#tet{
+			display: inline-flex;
+			width: 30%;
+			height: 80px;
+			font-size: 35px;
+			margin-right: 10px;
+			background-color: red;
+
+align-items: center;
+padding-left: 10%;
+		}
+		#rest{
+			margin-top: 10px;
+			color: #91398e;
+		}
+		#inr,#ins,#inp{
+			display: inline-flex;
+			width: 30%;
+			height: 80px;
+			font-size: 22px;
+			margin-right: 10px;
+			background-color: green;
+color: black;
+font-weight: bolder;
+align-items: center;
+		}
+		#sset:hover,#stp:hover{
+		background-color: #f9f567;
+		}
+		#sset,#stp{
+			display: inline-flex;
+			width: 30%;
+			height: 60px;
+			font-size: 16px;
+	border-radius: 10px;
+	color: #2ea89b;
+
+			background-color: #96471F;
+margin-left: 60px;
+align-items: center;
+		}
+		#snoo,#myBtn{
+		display: block;
+			width: 80%;
+			height: 70px;
+			font-size: 16px;
+	border-radius: 10px;
+	color: #2ea89b;
+	margin-left: 40px;
+
+			background-color: #e6b11a;
+margin-left: 40px;
+align-items: center;
+		}
+	</style>
+	<title>javascript ALARM</title>
+</head>
+<body onload="startTime()">
+	<div class="total">
+		<div class="ter" align="center" style=" font-size: 30px; font-family: arial; ">Time(GMT+1)</div>
+	<div id="ter"></div>	
+	<div id="tes"></div>
+	<div id="tet"></div>
+	
+
+	<div id="rest"  align="center" style=" font-size: 30px; font-family: arial;
+			">SET ALARM HERE</div>
+		<div class="eeg"><input id="inr" type="" placeholder="HOURS"  name="">
+<input id="ins" type="" placeholder="MINUTES"  name="">
+	<input id="inp" type="" placeholder="SECONDS"  name=""></div><br><br>
+	<input id="sset" type="button" value="SET ALARM" onclick="sett()" name="">
+<input id="stp" type="button" value="STOP ALARM" onclick="stop()">
+	 <div align="center"><button id="snoo"   onclick="sno()">SNOOZE</button></div>
+	<!--   <button onclick="pra()" id="set">SET</button><br> -- --> 
+	<button   id="myBtn"  onclick="aud()">RESET ALARM</button>
+	
+	<div></div>
+<!-- 	<div id="res" style="display: none;">SET ALARM HERE</div> -->
+	<audio id="song"  src="" autoplay="" style="display: none;"></audio>
+	</div>
+	<input id="fil" value="" type="file" name="">
+	<img id="ima" src="">
+<script >
+	var mm;
+	var nn;
+	var oo;
+	var aa;
+	var bb;
+	function startTime() {
+		// body...
+	
+	var a= new Date();
+	var b= a.getSeconds();
+	var c = a.getMinutes();
+	var d= a.getHours();
+	
+	  var t = setTimeout(startTime);
+ b= checkTime(b);
+
+	c= checkTime(c);
+	ter.innerHTML= d;
+	mm=inr.value;
+	nn=ins.value;
+	oo=inp.value;
+	tes.innerHTML=c;
+	tet.innerHTML= b;
+
+		 
+aa=d+':'+c+':'+b;
+bb=mm+':'+nn+':'+oo;
+	}
+var time;
+var abc=1000;
+        function sett() {
+
+
+		var cd=fil.value; 
+		var de=cd.lastIndexOf('\\');
+		var ef=cd.slice(de+1,cd.length);
+		var result='alarm audio/'+ef;
+		 if (aa!==bb) {
+		 		 }
+		 else{
+		 	song.src=result;
+if (fil.value=='') {
+	song.src='wakeup.mp3'
+}
+		 }
+		 
+		 startTime();
+		 
+		  time=setInterval(sett,abc);
+
+
+		 }
+		
+
+ 
+			function pra() {
+	if ( inr.value==d && ins.value==c &&inp.value==b) {
+			song.src=''
+		}
+}
+
+
+
+ function checkTime(i) {
+    if (i < 10) {i = "0" + i};  
+    return i;
+}
+
+function aud() {
+abc=10000000;
+	a+=1
+	inr.value=''
+	ins.value=''
+	inp.value=''
+	song.src=''
+if (a%2==1) {myBtn.style.opacity=.4;
+
+myBtn.innerHTML='';
+
+
+}
+	if (a%2==0) {myBtn.style.opacity=1;
+		myBtn.innerHTML='STOP ALARM'}
+	
+
+}
+
+
+function sno() {
+	
+ins.value= eval(parseInt(ins.value)+1);
+
+if (ins.value > 59) {
+	ins.value=ins.value%60;
+	inr.value=(parseInt(inr.value)+1);
+}
+if (ins.value<10 ) {
+	ins.value= '0'+ins.value;
+
+}
+if (inr.value>23) {
+	alert('input a valid time or the time will be converted to modulus 24');
+	inr.value=inr.value%24
+}
+
+
+
+return ins.value;
+if ( inr.value==d && ins.value==c &&inp.value==b) {
+
+	song.src=c
+	 	}
+}
+
+function stop() {
+		clearInterval(time);
+	song.src=''
+
+}
+if (inr.value=='' && ins.value=='' &&inp.value=='') {
+	song.src=''
+}
+</script>
+
+	</script>
+
+
+</body>
+
+
+</html>
+
